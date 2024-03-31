@@ -24,8 +24,7 @@ TwitterScore is a Python application that, given a Twitter URL, returns the numb
 
 ### Run the Application
 
-
-    ```bash
+    ```
     python app.py
     ```
     
@@ -45,9 +44,7 @@ You can also deploy TwitterScore using Docker.
 
 ### Build and Run Docker Container
 
-
-
-    ```bash
+    ```
     docker-compose up --build
     ```
    
