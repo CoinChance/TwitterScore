@@ -1,0 +1,15 @@
+
+
+version: '3.12.2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+     
+    network_mode: host
+    env_file:
+      - .env  
+    volumes:
+      - ./logs:/app/logs   # Mapping local folder 'logs' to container's 'logs' folder
