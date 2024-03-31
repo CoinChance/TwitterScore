@@ -25,7 +25,9 @@ TwitterScore is a Python application that, given a Twitter URL, returns the numb
 
 ### Run the Application
 ```bash
-python app.py  
+    python app.py  
+```
+
 
 ### Endpoint
 The application exposes an endpoint for counting tweets with mentions of a specified Twitter account.
@@ -45,5 +47,5 @@ You can also deploy TwitterScore using Docker.
 
 ```bash
     docker-compose up --build
-
+```
    
