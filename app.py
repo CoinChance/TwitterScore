@@ -35,6 +35,21 @@ request_log = []
 def rate_limit(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
+        """
+        Decorator function that adds rate limiting functionality to the wrapped function.
+
+        Parameters:
+        - func: The function to be wrapped.
+
+        Returns:
+        - The wrapped function.
+
+        Description:
+        This function is a decorator that adds rate limiting functionality to the wrapped function. It checks the number of requests made within a specified time window and if the limit is exceeded, it returns an error response. Otherwise, it records the request and calls the wrapped function.
+        The rate limit is defined by the global variable RATE_LIMIT, which specifies the maximum number of requests allowed within a time window defined by WINDOW_DURATION. The request log is a list that stores the timestamps of each request made.
+        If the number of requests made within the time window exceeds the rate limit, the function logs an error message and returns a JSON response with an error message and a status code of 429 (Too Many Requests). Otherwise, it records the current request in the request log and calls the wrapped function.
+        Note: The request log is a global variable and should be initialized before using this decorator.
+        """
         global request_log
         current_time = datetime.now()
 
@@ -53,6 +68,16 @@ def rate_limit(func):
 @app.route('/count_tweets', methods=['GET'])
 @rate_limit
 def count_tweets_route():
+    """
+    A route that counts the number of tweets with a given Twitter link.
+
+    Parameters:
+        None
+
+    Returns:
+        A JSON response containing the result of the tweet count operation.
+        The HTTP status code of the response.
+    """
     print()
     twitter_link = request.args.get('twitter_link')
     print(twitter_link)
@@ -65,6 +90,7 @@ def count_tweets_route():
     else:
         logging.error("Twitter link parameter missing")
         return jsonify({"error": "Twitter link parameter missing"}), 400
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

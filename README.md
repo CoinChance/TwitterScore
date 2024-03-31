@@ -5,6 +5,7 @@ TwitterScore is a Python application that, given a Twitter URL, returns the numb
 
 - Python 3.12.2
 - VPN (as Twitter API was not accessible w/o it.)
+- Maximum 5 Calls in 15 minutes (as per twitter basic plan). If plan is upgraded to enterprise, update RATE_LIMIT and RATE_LIMIT_DURATION variables in .env file
 
 ## Local Deployment
 
