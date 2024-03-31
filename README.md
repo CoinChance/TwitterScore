@@ -38,6 +38,7 @@ The application exposes an endpoint for counting tweets with mentions of a speci
 For example, you can try the following link in your browser:
 
 http://127.0.0.1:5000/count_tweets?twitter_link=https://twitter.com/SolSnap_
+http://127.0.0.1:5000/count_tweets?twitter_link=https://x.com/MochiCat_sol
 
 
 ## Docker Deployment

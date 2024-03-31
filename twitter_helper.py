@@ -11,7 +11,8 @@ from searchtweets import gen_request_parameters, collect_results
 class TwitterHelper:
     @staticmethod
     def extract_account(url):
-        pattern = r'https?://twitter.com/([A-Za-z0-9_]+)'
+        # Extract the account from the URL
+        pattern = r'https?://(?:www\.)?(?:twitter|x)\.com/(?:#!/)?([A-Za-z0-9_]+)'
         match = re.search(pattern, url)
         if match:
             return match.group(1)
