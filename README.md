@@ -4,6 +4,7 @@ TwitterScore is a Python application that, given a Twitter URL, returns the numb
 ## Requirements
 
 - Python 3.12.2
+- VPN (as Twitter API was not accessible w/o it.)
 
 ## Local Deployment
 
@@ -23,17 +24,15 @@ TwitterScore is a Python application that, given a Twitter URL, returns the numb
     ```
 
 ### Run the Application
-
-    ```
-    python app.py
-    ```
-    
+```bash
+python app.py  
 
 ### Endpoint
 The application exposes an endpoint for counting tweets with mentions of a specified Twitter account.
 
-Endpoint: http://127.0.0.1:5000/count_tweets
-Parameter: twitter_link (Twitter URL)
+- Endpoint: http://127.0.0.1:5000/count_tweets
+- Parameter: twitter_link (Twitter URL)
+
 For example, you can try the following link in your browser:
 
 http://127.0.0.1:5000/count_tweets?twitter_link=https://twitter.com/SolSnap_
@@ -44,7 +43,7 @@ You can also deploy TwitterScore using Docker.
 
 ### Build and Run Docker Container
 
-    ```
+```bash
     docker-compose up --build
-    ```
+
    
